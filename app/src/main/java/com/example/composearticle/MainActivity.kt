@@ -90,7 +90,7 @@ private fun ArticleCard(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ComposeArticleAppPreview() {
     ComposeArticleTheme {
