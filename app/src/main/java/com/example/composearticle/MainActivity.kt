@@ -19,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composearticle.R.drawable.bg_compose_background
@@ -73,17 +74,18 @@ private fun ArticleCard(
         Image(
             painter = imagePainter, contentDescription = null
         )
-        Text(
+        ArticleText(
             text = title,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
-            fontSize = 24.sp
+            fontSize = 24.sp,
+            textAlign = TextAlign.Justify
         )
-        Text(
+        ArticleText(
             text = shortDescription,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp),
             textAlign = TextAlign.Justify
         )
-        Text(
+        ArticleText(
             text = longDescription,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
             textAlign = TextAlign.Justify
@@ -91,7 +93,17 @@ private fun ArticleCard(
     }
 }
 
-@Preview(showBackground = true)
+@Composable
+fun ArticleText(text: String, modifier: Modifier = Modifier, textAlign: TextAlign, fontSize: TextUnit = TextUnit.Unspecified) {
+    Text(
+        text = text,
+        fontSize = fontSize,
+        modifier = modifier,
+        textAlign = textAlign
+    )
+}
+
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ComposeArticleAppPreview() {
     ComposeArticleTheme {
