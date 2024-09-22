@@ -21,6 +21,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.composearticle.R.drawable.bg_compose_background
+import com.example.composearticle.R.string.compose_long_desc
+import com.example.composearticle.R.string.compose_short_desc
+import com.example.composearticle.R.string.title_jetpack_compose_tutorial
 import com.example.composearticle.ui.theme.ComposeArticleTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,8 +37,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
                     ComposeArticleApp(
-                        modifier = Modifier
-                            .padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -47,14 +50,13 @@ fun ComposeArticleApp(
     modifier: Modifier = Modifier
 ) {
     Surface(
-        modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+        modifier = modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
     ) {
         ArticleCard(
-            imagePainter = painterResource(R.drawable.bg_compose_background),
-            title = stringResource(R.string.title_jetpack_compose_tutorial),
-            shortDescription = stringResource(R.string.compose_short_desc),
-            longDescription = stringResource(R.string.compose_long_desc)
+            imagePainter = painterResource(bg_compose_background),
+            title = stringResource(title_jetpack_compose_tutorial),
+            shortDescription = stringResource(compose_short_desc),
+            longDescription = stringResource(compose_long_desc)
         )
     }
 }
@@ -69,8 +71,7 @@ private fun ArticleCard(
 ) {
     Column(modifier = modifier) {
         Image(
-            painter = imagePainter,
-            contentDescription = null
+            painter = imagePainter, contentDescription = null
         )
         Text(
             text = title,
@@ -98,8 +99,7 @@ fun ComposeArticleAppPreview() {
             modifier = Modifier.fillMaxSize(),
         ) { innerPadding ->
             ComposeArticleApp(
-                modifier = Modifier
-                    .padding(innerPadding)
+                modifier = Modifier.padding(innerPadding)
             )
         }
     }
