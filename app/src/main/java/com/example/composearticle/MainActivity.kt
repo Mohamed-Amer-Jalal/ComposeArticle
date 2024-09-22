@@ -100,10 +100,7 @@ fun ArticleText(
     fontSize: TextUnit = TextUnit.Unspecified
 ) {
     Text(
-        text = text,
-        fontSize = fontSize,
-        modifier = modifier,
-        textAlign = textAlign
+        text = text, fontSize = fontSize, modifier = modifier, textAlign = textAlign
     )
 }
 
