@@ -77,8 +77,7 @@ private fun ArticleCard(
         ArticleText(
             text = title,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp),
-            fontSize = 24.sp,
-            textAlign = TextAlign.Justify
+            fontSize = 24.sp
         )
         ArticleText(
             text = shortDescription,
@@ -94,7 +93,12 @@ private fun ArticleCard(
 }
 
 @Composable
-fun ArticleText(text: String, modifier: Modifier = Modifier, textAlign: TextAlign, fontSize: TextUnit = TextUnit.Unspecified) {
+fun ArticleText(
+    text: String,
+    modifier: Modifier = Modifier,
+    textAlign: TextAlign = TextAlign.Unspecified,
+    fontSize: TextUnit = TextUnit.Unspecified
+) {
     Text(
         text = text,
         fontSize = fontSize,
