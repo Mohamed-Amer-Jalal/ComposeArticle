@@ -92,7 +92,7 @@ private fun ArticleCard(
 fun ArticleText(
     text: String,
     modifier: Modifier = Modifier,
-    textAlign: TextAlign = TextAlign.Unspecified,
+    textAlign: TextAlign? = null,
     fontSize: TextUnit = TextUnit.Unspecified
 ) {
     Text(
